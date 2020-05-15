@@ -1,0 +1,200 @@
+.App {
+  text-align: center;
+}
+body{
+ /* background-color: #0c0c13;   */
+ 
+margin: 5px;
+}
+.title-navbar{ color:  #ec0250;}
+.navbar-style{
+
+
+  color: black;
+padding-left: 18px;
+font-size: 50px;
+font-weight: 700;
+border-radius: 15px;
+
+}
+.navbar-style-search{
+
+
+  border-radius: 15px;
+  color: cornsilk;
+}
+/* ----------------------------------------------barre recherche--------------------------------------------- */
+.search-style{
+  font-size: 22px;
+  width: 250px;
+  padding:5px 5px ;
+
+  border: none;
+  border-radius: 15px;  
+  color: #171638; 
+  margin-left: 2px;
+  margin-bottom: 15px;
+  outline: none;
+
+
+   ;
+  }
+
+
+  .box-search-name:hover{
+  box-shadow: #ec0250 0 0 10px ;
+  }
+  .box-search-name{
+    border-radius: 15px;  
+
+    color:  #171638 ;
+    padding-left: 8px;
+    margin-bottom: 15px;
+
+  }
+  .search-style-rate {
+    padding:5px  ;
+    color:grey;
+
+    margin-right: 15px;
+  border-radius:15px ;
+
+  }
+  .search-style-rate:hover{
+    box-shadow: #ec0250 0 0 10px ;
+    }
+    .initial-star-recherche{
+   color: yellow;
+    }
+    .box-search-type{
+      display: flex;
+  flex-flow: row wrap;
+justify-content: space-between;
+margin-top: 25px;
+
+    }
+
+    .star-color-search{
+    color: gray;
+    }
+/* ------------------------------------------------add------------------------------------------------------------ */
+.button-add-film{
+  margin-top: 30px;
+border-radius:50px ;
+background-color: #171638 ;
+height: 50px;
+width: 50px;
+border: none;
+outline: none;
+}
+/* ------------------------------------------------list cards------------------------------------------------------ */
+.container-box {
+  display: flex;
+  flex-flow: row wrap;
+justify-content: space-evenly;
+margin-top: 50px;
+width: 100%;
+
+}
+.box{
+
+ color: thistle;
+ background-color: black;
+  width: 180px;
+
+   border-radius: 10px;
+    margin-bottom: 50px; 
+   padding: 25px 0px; 
+ }
+
+.box:hover{
+  box-shadow: #ec0250 0 0 10px ;
+ }
+.button-des{
+  border-radius: 15px;
+  margin-top: 5px;
+  background-color: #171638;
+  margin-left: 5px;
+  color: aliceblue;
+}
+.button-des2{
+  background-color:#171638;
+  border-radius: 15px;
+ height: 30px;
+ color: aliceblue;
+
+}
+/* -----------------------------------------modal------------------------------ */
+.modalAddMovieCard{
+background-color: rgb(12, 8, 2);
+color:whitesmoke;
+border-radius:15px ;
+border: 2px solid white;
+}
+.btnModalCheck{
+border-radius:50% ;
+}
+.btnModaldanger{
+  border-radius:50% ;
+}
+.btnModalBox{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.image-containre-box{
+  height: 100px;
+
+}
+.description{
+  font-size: 0.5em;
+}
+
+.description-box{
+  background-image:url(https://img.freepik.com/vecteurs-libre/fond-mur-sombre_1390-191.jpg?size=338&ext=jpg) ;
+  color: aliceblue;
+  background-attachment: fixed;
+  background-size: 100% 100%; 
+
+background-repeat: no-repeat;
+
+
+
+}
+.box-favoris{
+  background-image:url(https://img.freepik.com/photos-gratuite/claperboard-popcorns-verre-emporter-pailles-popcorns-fond-rouge_23-2148188198.jpg?size=626&ext=jpg) ;
+  color:black;
+  background-attachment: fixed;
+  background-size: 100% 100%; 
+  height: 100vh;
+background-repeat: no-repeat;
+}
+
+
+.favoris-title{
+  font-size: 50px;
+text-align: center;
+}
+.title-description{
+  font-size: 50px;
+  text-align: center;
+  color: bisque;
+}
+
+
+.image-desrip{
+  width: 30%;
+  height: 30%;
+  border-radius:20% 0px ;
+
+  margin-right: 35px;
+  padding: 25px;
+}
+.box-des{
+  display: flex;
+  justify-content: space-evenly;
+
+}
+.description-p{
+text-align: center;
+}
