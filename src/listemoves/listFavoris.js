@@ -19,7 +19,7 @@ export default class Favoris extends Component {
                             <img top width="100%" className='image-containre-box' src={el.image} />
                             <h6 className=''>{el.title}</h6>
 
-                            <button className='button-des' onClick={() => this.props.delete(this.props.tabFavoris.indexOf(el))} >delete</button>
+                            <button className='button-des' onClick={() => this.props.delete(this.props.tabFavoris.indexOf(el))} ><i className="fa fa-trash"></i></button>
                         </div>)}
                 </div>
             </div>

@@ -1,10 +1,12 @@
 import React from 'react'
-import Search from '../search/search'
+import FormPage from '../sign/sign'
 import Add from './addFilm'
 import { Link } from 'react-router-dom';
 import Favoris from './listFavoris';
 import Description from './description'
-
+import Listmovie from './listmovie'
+import { BrowserRouter, Route } from 'react-router-dom';
+import Search from '../search/search'
 let movie = [
     { id: 0, title: 'Avatar', image: 'https://img-4.linternaute.com/sh7w3Ru857R9xVcBYTFhbVicBRs=/1240x/smart/6e6ceb7460c14a43a54f9b87b3a56a5d/ccmcms-linternaute/11280954.jpg', description: "Avatar est un film de science-fiction américain réalisé par James Cameron, sorti en 2009. Il s'agit du premier film de la franchise cinématographique Avatar.", rating: '★' },
     { id: 1, title: "Don't Breathe", image: 'https://fr.web.img4.acsta.net/pictures/16/08/03/17/07/185379.jpg', description: " Pour échapper à la violence de sa mère et sauver sa jeune soeur d'une existence sans avenir, Rocky est prête à tout.  ", rating: '★★★★★' },
@@ -16,7 +18,7 @@ let movie = [
 let tab = { title: '', image: '', description: '', rating: '' }
 let tabFavoris = []
 let d = []
-let star = []
+
 export default class Cardlist extends React.Component {
     state = {
         movieCopy: movie,
@@ -29,7 +31,6 @@ export default class Cardlist extends React.Component {
 
         let change = this.state.tabCopy = ({ ...this.state.tabCopy, [e.target.name]: e.target.value })
         this.setState({ tabCopy: change })
-
 
     }
 
@@ -56,20 +57,20 @@ export default class Cardlist extends React.Component {
 
 
     }
+
+    delete = (index) => {
+
+        this.state.movieCopy.splice(index, 1)
+        this.setState({ movieCopy: this.state.movieCopy })
+
+    };
     supprime = (index) => {
 
-        let x = this.state.testFavorisTab.splice(index, 1)
-        this.setState({ testFavorisTabvie: x })
-
-        console.log(typeof (x))
-    };
-    delete(index) {
-
-        let x = this.state.movieCopy.splice(index, 1)
-        this.setState({ movie: x })
-
+        this.state.testFavorisTab.splice(index, 1)
+        this.setState({ testFavorisTab: this.state.testFavorisTab })
 
     };
+
     SearchBar = (e) => {
         let list = movie
         let input = e.target.value
@@ -99,51 +100,35 @@ export default class Cardlist extends React.Component {
     render() {
         return (
             <div>
-                <div className='navbar-style-search'>
-                    <Search SearchBar={this.SearchBar} searchRating={this.searchRating} /></div>
-
-                <Add addMovie={this.addMovie} handelchange={this.handelchange} />
-
-                <div className='container-box '>
 
 
 
+                <BrowserRouter>
+
+                    <span className='navbar-movie'>
+                        <span className='navbar-movie-link'>
+
+                            <h2 className='title-navbar'>   <i className="fa fa-film"></i> movie </h2>
+                            <Link to='/'> Home </Link>
+                            <Link to='/favoris'> Favorite </Link>
+
+                        </span>
+                        <div className='navbar-style-search'><Search SearchBar={this.SearchBar} searchRating={this.searchRating} /></div>
+                        <FormPage /></span>
+
+                    <Route exact path='/' component={() => <Listmovie movieCopy={this.state.movieCopy} addToFavoris={this.addToFavoris} description={this.description} editing={this.editing} delete={this.delete} addMovie={this.addMovie} handelchange={this.handelchange} />} />
+
+                    <Route path='/description' component={() => <Description des={this.state.des} />} />
+
+
+                    <Route exact path='/favoris' component={() => <Favoris tabFavoris={this.state.testFavorisTab} delete={this.supprime} />} />
+                </BrowserRouter>
 
 
 
 
-                    {this.state.movieCopy.map(el =>
-                        <div key={Math.random() * 10} className='box'>
-                            <center>
-                                <p className='star' style={{ color: 'yellow', fontSize: '20px' }}> {el.rating}</p>
-                            </center>
-                            <img top width="100%" className='image-containre-box' src={el.image} />
-                            <center>
-                                <h6 className=''>{el.title}</h6>
 
 
-                                <button className='button-des2' onClick={() => this.addToFavoris(el)}><i class="fa fa-heart"></i></button><br />
-
-                                {/* <Link to='/description'> */}
-                                <button className='button-des' onClick={() => this.description(el)}>view</button>
-                                {/* </Link> */}
-
-
-                                <button className='button-des' onClick={this.editing(el)}>modify</button>
-
-
-
-                                <button className='button-des' onClick={() => this.delete(this.state.movieCopy.indexOf(el))}>delete</button>
-
-                            </center>
-
-                        </div>
-
-                    )}
-                    <Description des={this.state.des} />
-                </div>
-
-                <Favoris tabFavoris={this.state.testFavorisTab} delete={this.supprime} />
 
 
             </div>

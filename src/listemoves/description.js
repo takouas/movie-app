@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './des.css';
+
 export default class Description extends Component {
     render() {
 

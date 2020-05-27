@@ -2,11 +2,22 @@
   text-align: center;
 }
 body{
- /* background-color: #0c0c13;   */
+ background-color: #222629;  
  
 margin: 5px;
 }
-.title-navbar{ color:  #ec0250;}
+.navbar-movie{
+  display: flex;
+  flex-flow: row wrap;
+justify-content: space-between;
+margin-top: 25px;
+}
+.navbar-movie-link{
+
+  padding-left: 10px;
+
+}
+.title-navbar{ color:  hsl(336, 91%, 31%);}
 .navbar-style{
 
 
@@ -36,8 +47,6 @@ border-radius: 15px;
   margin-bottom: 15px;
   outline: none;
 
-
-   ;
   }
 
 
@@ -46,10 +55,11 @@ border-radius: 15px;
   }
   .box-search-name{
     border-radius: 15px;  
-
+background-color: white;
     color:  #171638 ;
     padding-left: 8px;
     margin-bottom: 15px;
+    display: flex;
 
   }
   .search-style-rate {
@@ -81,7 +91,7 @@ margin-top: 25px;
 .button-add-film{
   margin-top: 30px;
 border-radius:50px ;
-background-color: #171638 ;
+background-color: #4E4E50 ;
 height: 50px;
 width: 50px;
 border: none;
@@ -92,19 +102,20 @@ outline: none;
   display: flex;
   flex-flow: row wrap;
 justify-content: space-evenly;
-margin-top: 50px;
+margin-top: 15px;
 width: 100%;
 
 }
 .box{
 
  color: thistle;
- background-color: black;
-  width: 180px;
+ background-color:grey ;
+  width: 280px;
 
    border-radius: 10px;
-    margin-bottom: 50px; 
-   padding: 25px 0px; 
+    margin-bottom: 20px; 
+   padding: 10px 0px; 
+   margin: 25px;
  }
 
 .box:hover{
@@ -113,17 +124,24 @@ width: 100%;
 .button-des{
   border-radius: 15px;
   margin-top: 5px;
-  background-color: #171638;
+color:  hsl(336, 91%, 31%);
   margin-left: 5px;
-  color: aliceblue;
-}
-.button-des2{
-  background-color:#171638;
-  border-radius: 15px;
- height: 30px;
- color: aliceblue;
+  background-color:transparent; 
 
 }
+.button-des2{
+ color: #970741;
+  border-radius: 15px;
+ height: 30px;
+ background-color: transparent;
+
+
+}
+.image-containre-box{
+  height: 250px; 
+
+}
+
 /* -----------------------------------------modal------------------------------ */
 .modalAddMovieCard{
 background-color: rgb(12, 8, 2);
@@ -142,28 +160,10 @@ border-radius:50% ;
   justify-content: space-evenly;
 }
 
-.image-containre-box{
-  height: 100px;
 
-}
-.description{
-  font-size: 0.5em;
-}
-
-.description-box{
-  background-image:url(https://img.freepik.com/vecteurs-libre/fond-mur-sombre_1390-191.jpg?size=338&ext=jpg) ;
-  color: aliceblue;
-  background-attachment: fixed;
-  background-size: 100% 100%; 
-
-background-repeat: no-repeat;
-
-
-
-}
 .box-favoris{
-  background-image:url(https://img.freepik.com/photos-gratuite/claperboard-popcorns-verre-emporter-pailles-popcorns-fond-rouge_23-2148188198.jpg?size=626&ext=jpg) ;
-  color:black;
+
+  color:white;
   background-attachment: fixed;
   background-size: 100% 100%; 
   height: 100vh;
@@ -175,13 +175,29 @@ background-repeat: no-repeat;
   font-size: 50px;
 text-align: center;
 }
+
+/********************************** view *************************************************/
 .title-description{
   font-size: 50px;
   text-align: center;
   color: bisque;
 }
 
+.description{
+  font-size: 0.5em;
+}
 
+.description-box{
+
+  color: aliceblue;
+  background-attachment: fixed;
+  background-size: 100% 100%; 
+
+background-repeat: no-repeat;
+
+
+
+}
 .image-desrip{
   width: 30%;
   height: 30%;
@@ -197,4 +213,93 @@ text-align: center;
 }
 .description-p{
 text-align: center;
+}
+
+/* sign in */
+
+
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+}
+
+.auth-inner {
+  width: 450px;
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all .3s;
+}
+
+.auth-wrapper .form-control:focus {
+  border-color: #6F2232;
+  box-shadow: none;
+}
+
+.auth-wrapper h3 {
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+  padding-bottom: 20px;
+}
+
+.custom-control-label {
+  font-weight: 400;
+}
+
+.forgot-password,
+.forgot-password a {
+  text-align: right;
+  font-size: 13px;
+  padding-top: 10px;
+  color: #7f7d7d;
+  margin: 0;
+}
+
+.forgot-password a {
+  color: #167bff;
+}
+.box-sigg-in{
+  display: flex;
+  flex-flow: row wrap;
+justify-content: space-around;
+
+color:whitesmoke;
+
+
+
+
+}
+.modal-body{
+  background-color: rgb(12, 8, 2);
+
+
+  
+}
+/* spinner */
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #970741;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin-top: 350px;
+
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

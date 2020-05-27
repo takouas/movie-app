@@ -1,33 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react'
 import Cardlist from './listemoves/card-list';
-import Description from './listemoves/description'
-import Favoris from './listemoves/listFavoris'
-import { BrowserRouter, Route } from 'react-router-dom';
+
+
 import './App.css';
 
 
-function App() {
-  return (
-    <div >
-      <center className='navbar-style' >
-        <h2 className='title-navbar'>movie </h2>
+export default class App extends Component {
+  state = { isLoading: true };
 
-      </center>
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 3000);
+  }
 
-      <BrowserRouter>
+  render() {
 
-        <Route exact path='/' component={Cardlist} />
+    return (
+      <div>
 
-        <Route path='/description' component={() => <Description />} />
+        {this.state.isLoading ? <center><div className="loader"></div> </center> : < Cardlist />}
 
-      </BrowserRouter>
-
-    </div>
-
-  );
+      </div>
+    )
+  }
 }
 
-export default App;
 
 
 
